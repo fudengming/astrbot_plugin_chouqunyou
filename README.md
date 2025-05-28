@@ -1,8 +1,8 @@
-# helloworld
+# 抽群员
 
-AstrBot 插件模板
+AstrBot 插件
 
-A template plugin for AstrBot plugin feature
+仅支持aicqhttp.从QQ群里抽取一个群友
 
 # 支持
 
