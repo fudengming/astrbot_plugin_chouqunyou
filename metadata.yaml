@@ -1,6 +1,6 @@
 name: 抽群友 # 这是你的插件的唯一识别名。
 desc: 这是用于抽取QQ群群员的插件。 # 插件简短描述
-help: 输入 /keyword 查看关键词回复帮助。 # 插件的帮助信息
-version: v1.0 # 插件版本号。格式：v1.1.1 或者 v1.1
-author: 灵煞 # 作者
-repo: https://github.com/tenno1174/astrbot_plugin_chouqunyou/edit/master # 插件的仓库地址
+help: 无帮助信息。 # 插件的帮助信息
+version: v1.1 # 插件版本号。格式：v1.1.1 或者 v1.1
+author: 灵煞、FDMNya~（QWen3-Coder） # 作者
+repo: https://github.com/tenno1174/astrbot_plugin_chouqunyou # 插件的仓库地址
