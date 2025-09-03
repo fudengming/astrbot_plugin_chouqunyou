@@ -17,7 +17,7 @@ MESSAGES = {
     "user_format": "{nickname}({user_id})",
 }
 
-@register("chouqunyou", "灵煞、FDMNya~（QWen3-Coder）", "抽取QQ群群员的插件", "1.0.0")
+@register("chouqunyou", "灵煞、FDMNya~（QWen3-Coder）", "抽取QQ群群员的插件", "1.1.0")
 class ChouQunYou(Star):
     def __init__(self, context: Context):
         super().__init__(context)
