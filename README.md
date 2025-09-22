@@ -7,3 +7,4 @@ AstrBot 插件
 # 支持
 
 [帮助文档](https://astrbot.app)
+[NekoiMeiov_Team](https://github.com/NekoiMeiov)

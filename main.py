@@ -6,7 +6,6 @@ import json
 import random
 from astrbot.core.platform.sources.aiocqhttp.aiocqhttp_message_event import AiocqhttpMessageEvent
 import astrbot.api.message_components as Comp
-
 # 文案字典
 MESSAGES = {
     "fetch_error": "获取出错!",
@@ -17,7 +16,7 @@ MESSAGES = {
     "user_format": "{nickname}({user_id})",
 }
 
-@register("chouqunyou", "灵煞、FDMNya~（QWen3-Coder）", "抽取QQ群群员的插件", "1.1.0")
+@register("chouqunyou", "灵煞、NekoiMeiov_Team", "抽取QQ群群员的插件", "1.1.0")
 class ChouQunYou(Star):
     def __init__(self, context: Context):
         super().__init__(context)
@@ -48,6 +47,8 @@ class ChouQunYou(Star):
         random_index = random.randint(0, member_count - 1)
         return member_list[random_index]
 
+    @filter.platform_adapter_type(filter.PlatformAdapterType.AIOCQHTTP)
+    @filter.event_message_type(filter.EventMessageType.GROUP_MESSAGE)
     @filter.command("抽取")
     async def draw_single_member(self, event: AstrMessageEvent):
         member_list = await self._get_group_members(event)
@@ -75,6 +76,8 @@ class ChouQunYou(Star):
         ]
         yield event.chain_result(message_chain)
 
+    @filter.platform_adapter_type(filter.PlatformAdapterType.AIOCQHTTP)
+    @filter.event_message_type(filter.EventMessageType.GROUP_MESSAGE)
     @filter.command("十连", alias={"十连抽"})
     async def draw_ten_members(self, event: AstrMessageEvent):
         member_list = await self._get_group_members(event)
@@ -98,6 +101,8 @@ class ChouQunYou(Star):
         ]
         yield event.chain_result(message_chain)
 
+    @filter.platform_adapter_type(filter.PlatformAdapterType.AIOCQHTTP)
+    @filter.event_message_type(filter.EventMessageType.GROUP_MESSAGE)
     @filter.command("多抽", alias={"多连抽"})
     async def draw_multiple_members(self, event: AstrMessageEvent, count: int):
         # 消息过长会发送失败，懒得分段了干脆从源头上解决，限制一下抽取的次数

@@ -1,0 +1,105 @@
+{
+    "draw": {
+        "type": "object",
+        "description": "随机抽取群友",
+        "hint": "随机抽取群友功能相关配置",
+        "items": {
+            "enabled": {
+                "type": "bool",
+                "description": "是否启用功能",
+                "hint": "开启随机抽取群友功能",
+                "default": true
+            },
+            "allow_ten_draw": {
+                "type": "bool",
+                "description": "是否启用十连抽",
+                "hint": "开启十连抽功能",
+                "default": true
+            },
+            "multi_draw_max": {
+                "type": "int",
+                "description": "最高连抽次数",
+                "hint": "单次最高连抽次数，设置为0则关闭连抽功能",
+                "default": 500
+            },
+            "messages": {
+                "type": "object",
+                "description": "提示消息配置",
+                "hint": "自定义功能的各种提示消息",
+                "items": {
+                    "fetch_error": {
+                        "type": "string",
+                        "description": "获取出错提示",
+                        "hint": "获取群友列表出错时显示的提示",
+                        "default": "获取出错!"
+                    },
+                    "too_many_error": {
+                        "type": "string",
+                        "description": "抽取次数过多提示",
+                        "hint": "抽取次数超过限制时显示的提示",
+                        "default": "抽取次数过大，不执行抽取操作"
+                    },
+                    "single_draw_prefix": {
+                        "type": "string",
+                        "description": "单抽前缀",
+                        "hint": "单次抽取时显示的前缀文本",
+                        "default": "这是你抽到的群友"
+                    },
+                    "ten_draw_prefix": {
+                        "type": "string",
+                        "description": "十连抽前缀",
+                        "hint": "十连抽时显示的前缀文本",
+                        "default": "这是你的十连抽结果："
+                    },
+                    "multi_draw_prefix": {
+                        "type": "string",
+                        "description": "多连抽前缀",
+                        "hint": "多连抽时显示的前缀文本，{num_str}会被替换为实际数字",
+                        "default": "这是你的{num_str}连抽结果："
+                    },
+                    "user_format": {
+                        "type": "string",
+                        "description": "用户显示格式",
+                        "hint": "用户信息显示格式，{nickname}和{user_id}会被替换为实际值",
+                        "default": "{nickname}({user_id})"
+                    }
+                }
+            }
+        }
+    },
+    "wife": {
+        "type": "object",
+        "description": "今日老婆",
+        "hint": "今日老婆功能相关配置",
+        "items": {
+            "enabled": {
+                "type": "bool",
+                "description": "是否启用功能",
+                "hint": "开启今日老婆功能",
+                "default": true
+            },
+            "reset_time": {
+                "type": "string",
+                "description": "每日重置时间",
+                "hint": "每日重置老婆的时间，格式为hh:mm（24小时制）",
+                "default": "00:00"
+            },
+            "max_retries": {
+                "type": "int",
+                "description": "最大重新抽取次数",
+                "hint": "每日最大重新抽取次数，设置为0则禁止重新抽取",
+                "default": 0
+            },
+            "memory_type": {
+                "type": "string",
+                "description": "数据存储方式",
+                "hint": "数据存储方式：memory-内存存储（重启后数据丢失）；file-文件存储（重启后数据保留，推荐使用）",
+                "options": [
+                    "memory",
+                    "file"
+                ],
+                "default": "file"
+            }
+        }
+    }
+}
